@@ -6,8 +6,10 @@ import './index.css'
 import AOS from 'aos'
 import '../public/fonts/fonts.css'
 import './custom-aos.css'
+import { useDataStoreLoader } from '../data/DataStore'
 
 function MyApp({ Component, pageProps }) {
+    const { loading, error } = useDataStoreLoader()
     useEffect(() => {
         AOS.init()
         AOS.refresh()

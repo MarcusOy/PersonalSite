@@ -7,7 +7,7 @@ interface ITitleProps extends TextProps {
 }
 
 const Title = (p: ITitleProps) => {
-    return <BaseText fontSize={62} fontWeight="700" {...p} />
+    return <BaseText fontSize={[52, 52, 62, 62]} fontWeight="700" {...p} />
 }
 
 export default Title

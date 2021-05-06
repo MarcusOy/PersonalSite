@@ -7,7 +7,14 @@ export const slatePopInAnimation = {
 
 export const smIconAnimation = {
     "data-aos": 'fade-down',
-    // "data-aos-delay": 1000,
+    // delay is defined by array map index
+    "data-aos-duration": 750,
+    "data-aos-easing": 'ease-out-hyper'
+}
+
+export const downChevAnimation = {
+    "data-aos": 'fade-up',
+    "data-aos-delay": 1500,
     "data-aos-duration": 750,
     "data-aos-easing": 'ease-out-hyper'
 }
