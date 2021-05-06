@@ -1,23 +1,25 @@
 import React from 'react'
-import { Box } from 'rebass'
+import { Box, BoxProps } from 'rebass'
 
-interface ISlateProps {
+interface ISlateProps extends BoxProps {
     children?: React.ReactNode
 }
 
 const Slate = (p: ISlateProps) => {
     return (
         <Box
-            className="section"
+            className="section slate-out"
+            px={50}
+            backgroundColor="#131313"
+            minHeight="100vh"
             style={{
-                backgroundColor: '#131313',
-                // background:
-                //     'linear-gradient(315deg, rgb(0,0,0), rgb(38,38,38))',
-                minHeight: '100vh',
+                // transition: 'transform 0.6s cubic-bezier(0,.34,.4,.99), border-radius 0.6 cubic-bezier(1,0,1,0)',
+                transitionDuration: '0.6s',
+                transitionProperty: 'transform, border-radius',
+                transitionTimingFunction: 'cubic-bezier(0,.34,.4,.99)',
             }}
-        >
-            {p.children}
-        </Box>
+            {...p}
+        />
     )
 }
 

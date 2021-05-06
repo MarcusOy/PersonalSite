@@ -1,12 +1,13 @@
 import React from 'react'
-import { Text, TextProps } from 'rebass'
+import { TextProps } from 'rebass'
+import BaseText from './BaseText'
 
 interface ITitleProps extends TextProps {
     children: React.ReactNode
 }
 
 const Title = (p: ITitleProps) => {
-    return <Text {...p} color="white" />
+    return <BaseText fontSize={62} fontWeight="700" {...p} />
 }
 
 export default Title

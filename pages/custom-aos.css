@@ -1,0 +1,33 @@
+/* Animating the slate to pop in */
+[data-aos='slate-pop-in'] {
+    transform: scale(0.9);
+    border-radius: 100px;
+    transition-property: transform, border-radius;
+}
+.slate-in,
+[data-aos='slate-pop-in'].aos-animate {
+    transform: scale(1);
+    border-radius: 0px;
+}
+
+/* Animating the slate to pop out */
+[data-aos='slate-pop-out'] {
+    transform: scale(1);
+    border-radius: 0px;
+    transition-property: transform, border-radius;
+}
+.slate-out,
+[data-aos='slate-pop-out'].aos-animate {
+    transform: scale(0.9);
+    border-radius: 100px;
+}
+
+body[data-aos-easing='ease-out-hyper'] [data-aos],
+[data-aos][data-aos][data-aos-easing='ease-out-hyper'] {
+    transition-timing-function: cubic-bezier(0.015, 0.975, 0.175, 0.98);
+}
+
+body[data-aos-easing='ease-in-out-hyper'] [data-aos],
+[data-aos][data-aos][data-aos-easing='ease-in-out-hyper'] {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
