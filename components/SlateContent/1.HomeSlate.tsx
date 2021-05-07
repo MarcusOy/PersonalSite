@@ -12,6 +12,7 @@ import DataStore from '../../data/DataStore'
 import { downChevAnimation, smIconAnimation } from '../Animations'
 import { useTheme } from '../Theme'
 import Title from '../Typography/Title'
+import TextLoop from 'react-text-loop'
 
 interface IHomeSlateContentProps {
     onChevPress: () => void
@@ -63,30 +64,40 @@ const HomeSlateContent = (p: IHomeSlateContentProps) => {
                 <br />
                 <span style={{ color: currentAccent }}>Marcus Orciuch</span>
                 ,
-                <br /> a Software Engineer.
+                <br /> a{' '}
+                <TextLoop
+                    delay={1000}
+                    springConfig={{ stiffness: 180, damping: 8 }}
+                >
+                    <span>Software Engineer</span>
+                    <span>Videographer</span>
+                    <span>Designer</span>
+                    <span>Cybersecurity Student</span>
+                </TextLoop>
+                .
             </Title>
 
-            <div
-                {...downChevAnimation}
-                style={{
-                    position: 'absolute',
-                    bottom: 50,
-                    left: 0,
-                    right: 0,
-                }}
-            >
-                <FaChevronDown
-                    // className="hov-scale"
-                    onClick={p.onChevPress}
+            <div {...downChevAnimation}>
+                <div
                     style={{
-                        ...iconcss,
                         position: 'absolute',
-                        bottom: 50,
+                        top: 100,
                         left: 0,
                         right: 0,
-                        margin: 'auto',
                     }}
-                />
+                >
+                    <FaChevronDown
+                        className="hov-scale"
+                        onClick={p.onChevPress}
+                        style={{
+                            ...iconcss,
+                            position: 'absolute',
+                            left: 0,
+                            right: 0,
+                            margin: 'auto',
+                        }}
+                    />
+                </div>
             </div>
         </>
     )

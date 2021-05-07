@@ -18,8 +18,6 @@ const MenuSpeedDial = () => {
     const { currentIndex, isMenuAccessedOnce } = DataStore.useState((s) => s)
     const currentAccent = useTheme().theme.colors.inOrder[currentIndex]
 
-    console.log(isMenuAccessedOnce)
-
     // SpeedDial stuff
     const [isSPOpen, setIsSPOpen] = React.useState(false)
     const actions = [
@@ -81,6 +79,9 @@ const MenuSpeedDial = () => {
                 open={isSPOpen}
                 style={{
                     zIndex: 10,
+                }}
+                onClick={() => {
+                    setIsSPOpen(false)
                 }}
             />
             <SpeedDial
