@@ -10,6 +10,7 @@ import HomeSlateContent from '../components/SlateContent/1.HomeSlate'
 import 'aos/dist/aos.css'
 import MenuSpeedDial from '../components/MenuSpeedDial'
 import DataStore from '../data/DataStore'
+import OverviewSlateContent from '../components/SlateContent/2.Overview'
 
 export default function Home() {
     // Color n Animation stuff
@@ -92,7 +93,9 @@ export default function Home() {
                                     }}
                                 />
                             </Slate>
-                            <Slate></Slate>
+                            <Slate>
+                                <OverviewSlateContent />
+                            </Slate>
                             <Slate></Slate>
                             <Slate></Slate>
                             <Slate></Slate>

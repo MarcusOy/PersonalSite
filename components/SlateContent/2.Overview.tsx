@@ -1,5 +1,7 @@
+import Title from '../Typography/Title'
+
 const OverviewSlateContent = () => {
-    return ();
+    return <Title>Overview</Title>
 }
 
-export default OverviewSlateContent;
+export default OverviewSlateContent
