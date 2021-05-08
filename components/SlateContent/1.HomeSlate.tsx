@@ -7,7 +7,7 @@ import {
     FaChevronDown,
     FaLinkedin,
 } from 'react-icons/fa'
-import { Flex } from 'rebass'
+import { Box, Flex } from 'rebass'
 import DataStore from '../../data/DataStore'
 import { downChevAnimation, smIconAnimation } from '../Animations'
 import { useTheme } from '../Theme'
@@ -15,20 +15,12 @@ import Title from '../Typography/Title'
 import TextLoop from 'react-text-loop'
 
 interface IHomeSlateContentProps {
-    onChevPress: () => void
+    onChevPress?: () => void
 }
 
 const HomeSlateContent = (p: IHomeSlateContentProps) => {
     const currentIndex = DataStore.useState((s) => s.currentIndex)
     const currentAccent = useTheme().theme.colors.inOrder[currentIndex]
-
-    // Icon stuff
-    const iconcss: React.CSSProperties = {
-        fontSize: 40,
-        color: 'white',
-        marginRight: 30,
-        cursor: 'pointer',
-    }
 
     // Social Media Icons
     const smIcons = [FaGithub, FaLinkedin, FaInstagram, FaYoutube, FaDribbble]
@@ -46,9 +38,8 @@ const HomeSlateContent = (p: IHomeSlateContentProps) => {
                 {smIcons.map((IconComponent, i) => (
                     <div {...smIconAnimation} data-aos-delay={200 * i}>
                         <IconComponent
-                            className="hov-scale"
+                            className="feature-icon hov-scale"
                             key={i}
-                            style={{ ...iconcss }}
                             onClick={() => {
                                 window.open(smLinks[i])
                             }}
@@ -62,43 +53,62 @@ const HomeSlateContent = (p: IHomeSlateContentProps) => {
             >
                 👋 <span data-aos-offset={200}></span>Hi, I'm
                 <br />
-                <span style={{ color: currentAccent }}>Marcus Orciuch</span>
-                ,
-                <br /> a{' '}
-                <TextLoop
-                    delay={1000}
-                    springConfig={{ stiffness: 180, damping: 8 }}
-                >
-                    <span>Software Engineer</span>
-                    <span>Videographer</span>
-                    <span>Designer</span>
-                    <span>Cybersecurity Student</span>
-                </TextLoop>
-                .
+                <span style={{ color: currentAccent }}>Marcus Orciuch</span>,
+                <Box display={['none', 'none', 'block', 'block']}>
+                    a{' '}
+                    <TextLoop
+                        delay={1000}
+                        springConfig={{ stiffness: 180, damping: 8 }}
+                    >
+                        <span>Software Engineer</span>
+                        <span>Videographer</span>
+                        <span>Designer</span>
+                        <span>Cybersecurity Student</span>
+                    </TextLoop>
+                    .
+                </Box>
+                <Box display={['block', 'block', 'none', 'none']}>
+                    <TextLoop
+                        delay={1000}
+                        springConfig={{ stiffness: 180, damping: 8 }}
+                    >
+                        <span>
+                            a Software
+                            <br /> Engineer.
+                        </span>
+                        <span>a Videographer.</span>
+                        <span>a Designer.</span>
+                        <span>
+                            a Cybersecurity
+                            <br /> Student.
+                        </span>
+                    </TextLoop>
+                </Box>
             </Title>
 
-            <div {...downChevAnimation}>
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 100,
-                        left: 0,
-                        right: 0,
-                    }}
-                >
-                    <FaChevronDown
-                        className="hov-scale"
-                        onClick={p.onChevPress}
+            {p.onChevPress != undefined && (
+                <div {...downChevAnimation}>
+                    <div
                         style={{
-                            ...iconcss,
                             position: 'absolute',
+                            top: 100,
                             left: 0,
                             right: 0,
-                            margin: 'auto',
                         }}
-                    />
+                    >
+                        <FaChevronDown
+                            className="feature-icon hov-scale"
+                            onClick={p.onChevPress}
+                            style={{
+                                position: 'absolute',
+                                left: 0,
+                                right: 0,
+                                margin: 'auto',
+                            }}
+                        />
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     )
 }

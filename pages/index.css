@@ -41,3 +41,11 @@
 .hov-scale:hover {
     transform: scale(0.8);
 }
+
+/* Icon css*/
+.feature-icon {
+    font-size: 40px;
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+}
