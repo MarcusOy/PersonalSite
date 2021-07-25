@@ -2,17 +2,28 @@ import React from 'react'
 import DataStore from '../data/DataStore'
 import ReactFullpage from '@fullpage/react-fullpage'
 import FullPageContent from './FullPageContent'
+import { useMediaQuery } from '@material-ui/core'
 
 interface IFullPageProps {
     sectionNames: string[]
 }
 
 const FullPage = (p: IFullPageProps) => {
+    const isTabletOrMobile = useMediaQuery('(max-width:40em)')
+    let iscrollOptions = {
+        startY: -100,
+        mouseWheelSpeed: isTabletOrMobile ? 5 : 20,
+        disableMouse: !isTabletOrMobile,
+        disablePointer: !isTabletOrMobile,
+        disableTouch: !isTabletOrMobile,
+    }
+
     return (
         <ReactFullpage
             scrollingSpeed={1000}
-            scrollOverflow={true}
-            navigation={true}
+            scrollOverflow
+            scrollOverflowOptions={iscrollOptions}
+            navigation
             navigationPosition="right"
             anchors={p.sectionNames}
             navigationTooltips={p.sectionNames}

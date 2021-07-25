@@ -9,7 +9,7 @@ const Slate = (p: ISlateProps) => {
     return (
         <Box
             className="section slate-out"
-            px={50}
+            // px={50}
             backgroundColor="#131313"
             minHeight="100vh"
             style={{

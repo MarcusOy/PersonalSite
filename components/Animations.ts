@@ -12,6 +12,13 @@ export const smIconAnimation = {
     "data-aos-easing": 'ease-out-hyper'
 }
 
+export const blogArticleAnimation = {
+    "data-aos": 'fade-up',
+    // delay is defined by array map index
+    "data-aos-duration": 750,
+    "data-aos-easing": 'ease-out-hyper'
+}
+
 export const downChevAnimation = {
     "data-aos": 'fade-up',
     "data-aos-delay": 1500,

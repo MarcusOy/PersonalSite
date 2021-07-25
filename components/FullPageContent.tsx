@@ -7,18 +7,24 @@ import AboutMeSlateContent from './SlateContent/3.AboutMe'
 
 const FullPageContent = (s) => {
     // Adding the down chev functionality to the Landing slate
-    let slates = [...Slates]
-    slates[0].props = {
-        onChevPress: () => {
-            s.fullpageApi.moveSectionDown()
-        },
+    globalThis.moveSectionDown = () => {
+        s.fullpageApi.moveSectionDown()
     }
+    globalThis.moveSectionUp = () => {
+        s.fullpageApi.moveSectionUp()
+    }
+    // let slates = [...Slates]
+    // slates[0].props = {
+    //     onChevPress: () => {
+    //         s.fullpageApi.moveSectionDown()
+    //     },
+    // }
 
     return (
         <ReactFullpage.Wrapper>
-            {slates.map((s, i) => {
+            {Slates.map((s, i) => {
                 return (
-                    <Slate>
+                    <Slate key={i}>
                         <s.content {...s.props} />
                     </Slate>
                 )

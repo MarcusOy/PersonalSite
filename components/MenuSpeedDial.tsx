@@ -12,7 +12,7 @@ import { Flex } from 'theme-ui'
 import DataStore from '../data/DataStore'
 import { speedDialDescAnimation } from './Animations'
 import { useTheme } from './Theme'
-import BodyText from './Typography/BodyText'
+import { BodyText } from './Typography/BodyTypography'
 
 const MenuSpeedDial = () => {
     const { currentIndex, isMenuAccessedOnce } = DataStore.useState((s) => s)

@@ -41,6 +41,16 @@
 .hov-scale:hover {
     transform: scale(0.8);
 }
+.hov-scale-min {
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.hov-scale-min:hover {
+    transform: scale(0.9);
+}
 
 /* Icon css*/
 .feature-icon {
@@ -48,4 +58,37 @@
     color: white;
     margin-right: 30px;
     cursor: pointer;
+}
+
+/* Smoothen scroll for iScrollJS sections */
+.fp-scroller[style] {
+    transition-duration: 500ms !important;
+}
+
+/* Utility class for spinning icons*/
+.icon-spin {
+    -webkit-animation: icon-spin 2s infinite linear;
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
 }
