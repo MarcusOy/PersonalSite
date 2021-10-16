@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Slate from '../components/Slate'
-import { Box } from 'rebass'
+import { Box, Button } from 'rebass'
 import { useTheme } from '../components/Theme'
 
 import HomeSlateContent from '../components/SlateContent/1.HomeSlate'
@@ -11,6 +11,8 @@ import 'aos/dist/aos.css'
 import MenuSpeedDial from '../components/MenuSpeedDial'
 import DataStore from '../data/DataStore'
 import OverviewSlateContent from '../components/SlateContent/2.Overview'
+import Title from '../components/Typography/Title'
+import BodyText from '../components/Typography/BodyText'
 
 export default function Home() {
     // Color n Animation stuff
@@ -94,12 +96,26 @@ export default function Home() {
                                 />
                             </Slate>
                             <Slate>
-                                <OverviewSlateContent />
+                                <Title>WIP</Title>
+                                <BodyText>
+                                    This site is a work in progress. Feel free
+                                    to contact me using the floating button on
+                                    the bottom right, visit my blog, or check
+                                    out my resume above.
+                                </BodyText>
                             </Slate>
-                            <Slate></Slate>
-                            <Slate></Slate>
-                            <Slate></Slate>
-                            <Slate></Slate>
+                            <Slate>
+                                <Title>WIP</Title>
+                            </Slate>
+                            <Slate>
+                                <Title>WIP</Title>
+                            </Slate>
+                            <Slate>
+                                <Title>WIP</Title>
+                            </Slate>
+                            <Slate>
+                                <Title>WIP</Title>
+                            </Slate>
                         </ReactFullpage.Wrapper>
                     )
                 }}

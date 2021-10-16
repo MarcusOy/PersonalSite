@@ -7,7 +7,7 @@ import {
     FaChevronDown,
     FaLinkedin,
 } from 'react-icons/fa'
-import { Flex } from 'rebass'
+import { Button, Flex } from 'rebass'
 import DataStore from '../../data/DataStore'
 import { downChevAnimation, smIconAnimation } from '../Animations'
 import { useTheme } from '../Theme'
@@ -76,6 +76,25 @@ const HomeSlateContent = (p: IHomeSlateContentProps) => {
                 </TextLoop>
                 .
             </Title>
+
+            <Button
+                onClick={(_) => {
+                    window.open('/Orciuch_Marcus_Resume.pdf', '_blank').focus()
+                }}
+                style={{
+                    fontWeight: 'bold',
+                    fontSize: 12,
+                    marginTop: 20,
+                    border: '2px solid transparent',
+                    borderRadius: '10px',
+                    background:
+                        'linear-gradient(to right, #131313, #131313), linear-gradient(to right, #b92b27 , #1565C0)',
+                    backgroundClip: 'padding-box, border-box',
+                    backgroundOrigin: 'padding-box, border-box',
+                }}
+            >
+                RESUME
+            </Button>
 
             <div {...downChevAnimation}>
                 <div
